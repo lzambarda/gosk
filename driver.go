@@ -15,6 +15,8 @@ type TaskFunc[T any] func(task T) (err error)
 
 // Driver is the main interface to a data storage solution used by a Worker.
 //
+// See the Worker struct for more information about the generic types T and S.
+//
 //go:generate mockery --name Driver --structname Driver --filename driver_mock.go
 type Driver[T, S any] interface {
 	// Init initialises the underlying technology used to store tasks.
